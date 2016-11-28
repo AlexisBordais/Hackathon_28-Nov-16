@@ -10,6 +10,12 @@ module.exports = mongoose.model('Post', new mongoose.Schema({
         type: String,
         required: true
     },
+    langage: {
+      type: String
+    },
+    lieu: {
+      type: String
+    },
     title: {
         type: String
     },
