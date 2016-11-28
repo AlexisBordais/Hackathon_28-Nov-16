@@ -9,7 +9,7 @@ app.blog.item : nested state of state app.blog, display blog-item component with
     app.config(['$stateProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
         $stateProvider
         .state('app.blog', {
-            url: '',
+            url: '/blog',
             abstract: true,
             templateUrl: 'js/components/blog/blog.html'
         })
