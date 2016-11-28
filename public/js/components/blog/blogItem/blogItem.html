@@ -1,17 +1,18 @@
 <!-- Display blogItemMenu component (see blogItemMenu.js ) and bind properties with all functions  -->
 <blog-item-menu ng-if="$ctrl.editable" edit-mode="$ctrl.editMode" on-undo="$ctrl.undo()" on-edit="$ctrl.editMode = !$ctrl.editMode" on-delete="$ctrl.delete()" on-save="$ctrl.save()" />
-<div class="col s12 m5">
+<div class="col s12 m4">
     <div class="card">
         <!-- In general if it's not editable it's when this component is used in the blogList component -->
         <div class="card-content">
 
-
-        </div>
-        <div class="card-action">
-
-
             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
             <img ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="">
+        </div>
+
+
+
+
+        <div class="card-action">
             <!-- Display post.title if this component is not editable or editable and not in edit mode -->
 
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
@@ -23,10 +24,16 @@
             <div ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                 {{$ctrl.post.content | limitTo: ($ctrl.editable ? $ctrl.post.content.length : 110)}}
             </div>
+
+
             <!-- Display textarea for editing post.content only if editable and in edit mode -->
             <textarea class="materialize-textarea" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.content" placeholder="Content"></textarea>
             <!-- Display this link, only if it's not editable, to change state to app.blog.item with the post id -->
-            <a ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="blue-text text-darken-1">Read more</a>
+            <div class="row">
+              <a ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="blue-text text-darken-1 col m5">Read more</a>
+              <a ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="blue-text text-darken-1 col m5">Website</a>
+            </div>
+
             <!-- Display this link, only if it's editable and not in edit mode, to change state to app.blog.list (go back) -->
             <a ng-if="$ctrl.editable && !$ctrl.editMode" ui-sref="app.blog.list" class="blue-text text-darken-1">Close</a>
             <!-- Display these links, only if it's in edit mode  -->
