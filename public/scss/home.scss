@@ -1,0 +1,273 @@
+$cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease: ease;
+$elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$strokes: (
+	(
+		'id': 'corne',
+		'easing-function': $cubic,
+		'steps': (
+			0%: 0px,
+			40%: 1200px,
+		),
+		'color': '#D39F56',
+	),
+	(
+		'id': 'bodyleft',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			20%: 0px,
+			40%: 200px,
+		),
+		'color': '#D39F56',
+	),
+	(
+		'id': 'bodyright',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			20%: 0px,
+			40%: 200px,
+		),
+		'color': '#D39F56',
+	),
+	(
+		'id': 'eye1',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			30%: 0px,
+			50%: 100px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'eye2',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			30%: 0px,
+			50%: 100px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'menton',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			20%: 0px,
+			40%: 200px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'noeud',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			65%: 150px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'barbiche',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			65%: 150px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'barbe1',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			65%: 0px,
+			75%: 100px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'barbe2',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			65%: 0px,
+			75%: 100px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'barbe3',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			65%: 0px,
+			75%: 100px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'monocle',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			75%: 0px,
+			90%: 150px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'oreille1',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			60%: 150px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'oreille2',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			60%: 150px,
+		),
+		'color': '#c27844',
+	),
+	(
+		'id': 'oreille3',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			60%: 100px,
+		),
+		'color': '#261a14',
+	),
+	(
+		'id': 'oreille4',
+		'easing-function': $ease,
+		'steps': (
+			0%: 0px,
+			40%: 0px,
+			60%: 100px,
+		),
+		'color': '#261a14',
+	),
+);
+
+$fills: (
+	(
+		'class': 'st0',
+		'delay': '7',
+	),
+	(
+		'class': 'st2',
+		'delay': '6.2',
+	),
+	(
+		'class': 'st3',
+		'delay': '6.4',
+	),
+	(
+		'class': 'st4',
+		'delay': '6.8',
+	),
+	(
+		'class': 'st5',
+		'delay': '6.6',
+	),
+);
+
+svg {
+	display: block; margin: 0 auto;
+	width: 700px; height: 700px;
+	transform-origin: center;
+}
+
+[id=svg-fills] path {
+	opacity: 0;
+}
+
+[id=fond-stroke] {
+	opacity: 0;
+	animation: fond 1s forwards;
+	animation-delay: 5s;
+}
+
+[id=first-stroke] path, [id=second-stroke] path {
+	fill: none;
+	stroke-dasharray: 2000px;
+	stroke-linecap: round;
+}
+
+@each $line in $strokes {
+	$id:map-get($line, 'id');
+	$steps: map-get($line, 'steps');
+	$length: nth($steps, -1);
+	$color: map-get($line, 'color');
+	$easing-function: map-get($line, 'easing-function');
+
+	@keyframes #{$id} {
+		@each $step, $value in $steps {
+			#{$step} {
+				stroke-dasharray: $value, 2000px;
+			}
+		}
+	}
+
+	[id='#{$id}'] {
+		stroke: #{$color};
+		stroke-dasharray: $length, 2000px;
+		animation: unquote($id) 5s ease;
+	}
+}
+
+@keyframes fond {
+	from, 0% {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+// .st2 {
+// 	animation: test .2s forwards;
+// 	animation-delay: 6s;
+// }
+
+// @keyframes  test {
+// 	100% {
+// 		fill: red;
+// 	}
+// }
+
+@each $fill in $fills {
+	$class: map-get($fill, 'class');
+	$color: map-get($fill, 'fill');
+	$delay: map-get($fill, 'delay');
+
+
+
+	#svg-fills path[class='#{$class}'] {
+		animation: bingo 1s forwards;
+		animation-delay: #{$delay}s;
+	}
+}
+
+@keyframes bingo {
+		from, 0% {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
