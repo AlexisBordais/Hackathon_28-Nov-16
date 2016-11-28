@@ -1,0 +1,268 @@
+svg {
+  display: block;
+  margin: 0 auto;
+  width: 700px;
+  height: 700px;
+  transform-origin: center; }
+
+[id=svg-fills] path {
+  opacity: 0; }
+
+[id=fond-stroke] {
+  opacity: 0;
+  animation: fond 1s forwards;
+  animation-delay: 5s; }
+
+[id=first-stroke] path, [id=second-stroke] path {
+  fill: none;
+  stroke-dasharray: 2000px;
+  stroke-linecap: round; }
+
+@keyframes corne {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 1200px, 2000px; } }
+
+[id='corne'] {
+  stroke: #D39F56;
+  stroke-dasharray: 40% 1200px, 2000px;
+  animation: corne 5s ease; }
+
+@keyframes bodyleft {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  20% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 200px, 2000px; } }
+
+[id='bodyleft'] {
+  stroke: #D39F56;
+  stroke-dasharray: 40% 200px, 2000px;
+  animation: bodyleft 5s ease; }
+
+@keyframes bodyright {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  20% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 200px, 2000px; } }
+
+[id='bodyright'] {
+  stroke: #D39F56;
+  stroke-dasharray: 40% 200px, 2000px;
+  animation: bodyright 5s ease; }
+
+@keyframes eye1 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  30% {
+    stroke-dasharray: 0px, 2000px; }
+  50% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='eye1'] {
+  stroke: #261a14;
+  stroke-dasharray: 50% 100px, 2000px;
+  animation: eye1 5s ease; }
+
+@keyframes eye2 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  30% {
+    stroke-dasharray: 0px, 2000px; }
+  50% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='eye2'] {
+  stroke: #261a14;
+  stroke-dasharray: 50% 100px, 2000px;
+  animation: eye2 5s ease; }
+
+@keyframes menton {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  20% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 200px, 2000px; } }
+
+[id='menton'] {
+  stroke: #c27844;
+  stroke-dasharray: 40% 200px, 2000px;
+  animation: menton 5s ease; }
+
+@keyframes noeud {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  65% {
+    stroke-dasharray: 150px, 2000px; } }
+
+[id='noeud'] {
+  stroke: #261a14;
+  stroke-dasharray: 65% 150px, 2000px;
+  animation: noeud 5s ease; }
+
+@keyframes barbiche {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  65% {
+    stroke-dasharray: 150px, 2000px; } }
+
+[id='barbiche'] {
+  stroke: #261a14;
+  stroke-dasharray: 65% 150px, 2000px;
+  animation: barbiche 5s ease; }
+
+@keyframes barbe1 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  65% {
+    stroke-dasharray: 0px, 2000px; }
+  75% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='barbe1'] {
+  stroke: #c27844;
+  stroke-dasharray: 75% 100px, 2000px;
+  animation: barbe1 5s ease; }
+
+@keyframes barbe2 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  65% {
+    stroke-dasharray: 0px, 2000px; }
+  75% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='barbe2'] {
+  stroke: #c27844;
+  stroke-dasharray: 75% 100px, 2000px;
+  animation: barbe2 5s ease; }
+
+@keyframes barbe3 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  65% {
+    stroke-dasharray: 0px, 2000px; }
+  75% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='barbe3'] {
+  stroke: #c27844;
+  stroke-dasharray: 75% 100px, 2000px;
+  animation: barbe3 5s ease; }
+
+@keyframes monocle {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  75% {
+    stroke-dasharray: 0px, 2000px; }
+  90% {
+    stroke-dasharray: 150px, 2000px; } }
+
+[id='monocle'] {
+  stroke: #261a14;
+  stroke-dasharray: 90% 150px, 2000px;
+  animation: monocle 5s ease; }
+
+@keyframes oreille1 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  60% {
+    stroke-dasharray: 150px, 2000px; } }
+
+[id='oreille1'] {
+  stroke: #c27844;
+  stroke-dasharray: 60% 150px, 2000px;
+  animation: oreille1 5s ease; }
+
+@keyframes oreille2 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  60% {
+    stroke-dasharray: 150px, 2000px; } }
+
+[id='oreille2'] {
+  stroke: #c27844;
+  stroke-dasharray: 60% 150px, 2000px;
+  animation: oreille2 5s ease; }
+
+@keyframes oreille3 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  60% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='oreille3'] {
+  stroke: #261a14;
+  stroke-dasharray: 60% 100px, 2000px;
+  animation: oreille3 5s ease; }
+
+@keyframes oreille4 {
+  0% {
+    stroke-dasharray: 0px, 2000px; }
+  40% {
+    stroke-dasharray: 0px, 2000px; }
+  60% {
+    stroke-dasharray: 100px, 2000px; } }
+
+[id='oreille4'] {
+  stroke: #261a14;
+  stroke-dasharray: 60% 100px, 2000px;
+  animation: oreille4 5s ease; }
+
+@keyframes fond {
+  from, 0% {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+#svg-fills path[class='st0'] {
+  animation: bingo 1s forwards;
+  animation-delay: 7s; }
+
+#svg-fills path[class='st2'] {
+  animation: bingo 1s forwards;
+  animation-delay: 6.2s; }
+
+#svg-fills path[class='st3'] {
+  animation: bingo 1s forwards;
+  animation-delay: 6.4s; }
+
+#svg-fills path[class='st4'] {
+  animation: bingo 1s forwards;
+  animation-delay: 6.8s; }
+
+#svg-fills path[class='st5'] {
+  animation: bingo 1s forwards;
+  animation-delay: 6.6s; }
+
+@keyframes bingo {
+  from, 0% {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.pull-right {
+  float: right; }
+
+input[type=text]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #0C8CF6;
+  box-shadow: 0 1px 0 0 #0C8CF6; }
+
+
+/*# sourceMappingURL=app.min.css.map*/
