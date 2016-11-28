@@ -16,13 +16,17 @@
             <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
                 <select class="icons">
                         <option value="" disabled selected>Choose your best techno</option>
-                        <option data-icon="http://www.alsacreations.com/xmedia/doc/full/php-elephant.png"  value="1">PHP</option>
-                        <option data-icon="http://www.alex-arriaga.com/wp-content/uploads/2014/12/javascript-logo.png"  value="2">JAVASCRIPT</option>
-                        <option data-icon="https://cms-production-assets.s3-ap-southeast-1.amazonaws.com/1/technology/java-logo.png"  value="3">JAVA</option>
-                        <option data-icon="http://cs.lmu.edu/~ray/images/python-logo.png"  value="4">PYTHON</option>
-                        <option data-icon="http://static.tiepie.com/gfx/128x/Software/3rdParty/CPlusPlus/CPlusPlusLogo.png"  value="5">C++</option>
+                        <option data-icon="http://www.alsacreations.com/xmedia/doc/full/php-elephant.png"  value="PHP">PHP</option>
+                        <option data-icon="http://www.alex-arriaga.com/wp-content/uploads/2014/12/javascript-logo.png"  value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option data-icon="https://cms-production-assets.s3-ap-southeast-1.amazonaws.com/1/technology/java-logo.png"  value="JAVA">JAVA</option>
+                        <option data-icon="http://cs.lmu.edu/~ray/images/python-logo.png"  value="PYTHON">PYTHON</option>
+                        <option data-icon="http://static.tiepie.com/gfx/128x/Software/3rdParty/CPlusPlus/CPlusPlusLogo.png"  value="C++">C++</option>
                 </select>
             </div>
+
+            <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                                  {{$ctrl.post.langage}}
+                                </span>
 
             <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.lieu" placeholder="lieu">
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
