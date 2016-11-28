@@ -1,3 +1,9 @@
+body {
+background-image:url(/static/img/Jungle-Wallpaper-Backgrounds.png);
+background-size: 90%;
+}
+
+
 $cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 $ease: ease;
 $elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -188,7 +194,7 @@ $fills: (
 
 svg {
 	display: block; margin: 0 auto;
-	width: 700px; height: 700px;
+	width: 350px; height: 350px;
 	transform-origin: center;
 }
 
