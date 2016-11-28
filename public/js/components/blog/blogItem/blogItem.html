@@ -11,7 +11,7 @@
 
 
             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
-            <img ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="">
+            <img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="">
             <!-- Display post.title if this component is not editable or editable and not in edit mode -->
 
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
