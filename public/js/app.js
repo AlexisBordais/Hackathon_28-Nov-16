@@ -7,6 +7,7 @@ There are all depedencies (module)
 })(require('angular').module('app', [
   require('angular-ui-router'),
   'app.config',
+  'naif.base64',
   'app.services',
   'app.home',
   'app.blog'

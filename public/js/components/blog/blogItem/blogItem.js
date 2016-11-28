@@ -48,6 +48,7 @@ Create Angular component blogItem into module app.blog with databinding properti
             // Create save function.
             // If you want to use in view you can call with $ctrl.save()
             this.save = () => {
+              this.post.image = 'data:image/png;base64,' + this.file.base64;
                 // Call save method form PostsService with post
                 PostsService.save(this.post).then((res) => {
                     // Change editMode value to false
@@ -65,6 +66,10 @@ Create Angular component blogItem into module app.blog with databinding properti
                 // Affect initialPost value to post and change editMode to false
                 this.post = initialPost
                 this.editMode = false
+            }
+
+            this.base64 = () => {
+              console.log(this.yourModel.base64)
             }
 
         }]

@@ -6,6 +6,10 @@ let mongoose = require('mongoose')
 
 // Create du schema Post
 module.exports = mongoose.model('Post', new mongoose.Schema({
+    image: {
+        type: String,
+        required: true
+    },
     title: {
         type: String
     },
