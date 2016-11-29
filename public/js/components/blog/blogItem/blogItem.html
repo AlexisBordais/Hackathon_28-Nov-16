@@ -1,28 +1,56 @@
-
-
 <!-- Display blogItemMenu component (see blogItemMenu.js ) and bind properties with all functions  -->
 <blog-item-menu ng-if="$ctrl.editable" edit-mode="$ctrl.editMode" on-undo="$ctrl.undo()" on-edit="$ctrl.editMode = !$ctrl.editMode" on-delete="$ctrl.delete()" on-save="$ctrl.save()" />
+
 <div class="col s12 m4">
     <div class="card">
         <!-- In general if it's not editable it's when this component is used in the blogList component -->
+
+
+
         <div class="card-content">
+
             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
 
 
             <!-- display img in petite card -->
 
-<img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
+            <img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
 
 
 
+
+
+
+
+            <!--
+             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
+             <img class="col s12 m12" ng-if="(!$ctrl.editable)" ng-src="{{$ctrl.post.image}}" alt=""> <!--petite card-->
+            <!-- <img class="col s12 m12 l12" ng-if="($ctrl.editable  && !$ctrl.editMode)" ng-src="{{$ctrl.post.image}}" alt=""> -->
+            <!--grande card-->
 
 
             <!-- Display post.title if this component is not editable or editable and not in edit mode -->
             <!-- <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.langage" placeholder="langage"> -->
-            <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
-                  {{$ctrl.post.langage}}
+
+            <span id="titleptitecard" class="card-title col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                {{$ctrl.post.title}}
             </span>
 
+            <span class="card-title" ng-if="($ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+              <!-- c'est donc la petite vue -->
+              <h4>{{$ctrl.post.createdAt | date:'dd'}}</h4>
+              <h6>{{$ctrl.post.createdAt | date:'MM'}}</h6>
+            </span>
+
+
+            <!--  <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
+                <select ng-model="blop">
+                        <option value="PHP">PHP</option>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="PYTHON">PYTHON</option>
+                        <option value="Cpp">C++</option>
+=======
             <form>
                 <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
                     <select name="pouet" ng-model='$ctrl.post.langage' class="icons">
@@ -32,21 +60,27 @@
                         <option data-icon="https://cms-production-assets.s3-ap-southeast-1.amazonaws.com/1/technology/java-logo.png"  value="JAVA">JAVA</option>
                         <option data-icon="http://cs.lmu.edu/~ray/images/python-logo.png"  value="PYTHON">PYTHON</option>
                         <option data-icon="http://static.tiepie.com/gfx/128x/Software/3rdParty/CPlusPlus/CPlusPlusLogo.png"  value="C++">C++</option>
+
                 </select>
                 </div>
             </form>
 
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                  {{$ctrl.post.langage}}
+            </span>-->
+
+            <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.langage" placeholder="Quelle techno ?">
+            <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                                   {{$ctrl.post.langage}}
                                 </span>
+
+
             <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.lieu" placeholder="lieu">
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                                   {{$ctrl.post.lieu}}
                                 </span>
             <tt>{{$ctrl.post.langage}}</tt>
-            <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
-                        {{$ctrl.post.title}}
-                      </span>
+
             <!-- Display input for editing post.title only if editable and in edit mode -->
             <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.title" placeholder="Title">
             <!-- Display post.content if this component is not editable or editable and not in edit mode -->
@@ -58,10 +92,11 @@
         </div>
 
         <div class="card-action">
+            <!-- under the line -->
             <!-- Display this link, only if it's not editable, to change state to app.blog.item with the post id -->
             <div class="row">
                 <a ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="blue-text text-darken-1 col m5">Read more</a>
-                <a ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="blue-text text-darken-1 col m5">Website</a>
+                <a ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="blue-text text-darken-1 col m5"> Go Website</a>
             </div>
 
             <!-- Display this link, only if it's editable and not in edit mode, to change state to app.blog.list (go back) -->
@@ -70,10 +105,10 @@
             <a ng-if="$ctrl.editMode" ng-click="$ctrl.undo()" class="waves-effect blue-text text-darken-1"><i class="material-icons">undo</i></a>
             <a ng-if="$ctrl.editMode" ng-click="$ctrl.save()" class="waves-effect blue-text text-darken-1"><i class="material-icons">done</i></a>
             <!-- On click change value of post.isFav to inverse of this value -->
-            <a href="" ng-click="$ctrl.post.isFav = !$ctrl.post.isFav">
+            <!-- <a href="" ng-click="$ctrl.post.isFav = !$ctrl.post.isFav">
                 <!-- Change icon from post.isFav value -->
-                <i class="material-icons pull-right red-text darken-1-text">{{($ctrl.post.isFav ? 'favorite' : 'favorite_border')}}</i>
-            </a>
+            <!-- <i class="material-icons pull-right red-text darken-1-text">{{($ctrl.post.isFav ? 'favorite' : 'favorite_border')}}</i>
+            </a> -->
         </div>
 
     </div>
