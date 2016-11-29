@@ -1,11 +1,15 @@
+.card {
+  background-color: #d8f78f;
+}
+
 .card .card-content {
     padding: 0px;
     border-radius: 0 0 2px 2px;
 }
 
-.row {
-  margin-bottom: 0px;
-}
+// .row {
+//   margin-bottom: 0px;
+// }
 
 .card .card-action {
   text-align: center;
@@ -14,4 +18,27 @@
 #titleptitecard {
   font-weight: bold;
   text-align: center;
+}
+
+.paracontent {
+  margin-right: auto;
+  padding-left: 12px;
+  text-align: justify;
+  padding-right: 12px;
+}
+
+.toto {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.tata {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttlink {
+  display: flex;
+  justify-content: space-around;
 }

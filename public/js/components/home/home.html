@@ -224,7 +224,11 @@
                     <label for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
-                <div class="input-field col s5">
+
+                <input type="text" ng-model="$ctrl.post.langage" placeholder="Quelle techno ?">
+
+
+                <!-- <div class="input-field col s5">
                   <select multiple>
                     <option value="" disabled selected>Choose your techno</option>
                     <option value="1">PHP</option>
@@ -233,7 +237,7 @@
                     <option value="4">PYTHON</option>
                     <option value="5">C++</option>
                   </select>
-                </div>
+                </div> -->
                 <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu)" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>

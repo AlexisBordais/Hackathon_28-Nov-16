@@ -14,7 +14,7 @@ app.blog.item : nested state of state app.blog, display blog-item component with
             templateUrl: 'js/components/blog/blog.html'
         })
         .state('app.blog.list', {
-            url: '/filter/:lieu',
+            url: '/filter/:lieu/:langage',
             template: '<blog-list></blog-list>'
         })
         .state('app.blog.item', {
@@ -23,3 +23,5 @@ app.blog.item : nested state of state app.blog, display blog-item component with
         })
     }])
 })(require('angular').module('app.blog', []))
+
+// url: '/page/:x/:y',

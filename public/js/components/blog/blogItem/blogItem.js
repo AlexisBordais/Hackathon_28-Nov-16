@@ -12,7 +12,7 @@ Create Angular component blogItem into module app.blog with databinding properti
         },
         templateUrl: 'js/components/blog/blogItem/blogItem.html',
         controller: ['PostsService', '$stateParams', '$state', function(PostsService, $stateParams, $state) {
-            $('select').material_select();          
+            $('select').material_select();
             let initialPost;
             // Test if $stateParams.id exists (ex: stateParams.id is 1234567 form this url http://domain.ext/1234567)
             if ($stateParams.id) {
@@ -49,18 +49,20 @@ Create Angular component blogItem into module app.blog with databinding properti
             // Create save function.
             // If you want to use in view you can call with $ctrl.save()
             this.save = () => {
-                this.post.image = 'data:image/png;base64,' + this.file.base64;
+                 this.post.image = 'data:image/png;base64,' + this.file.base64;
+                 this.post.imageprofil = 'data:image/png;base64,' + this.file2.base64;
 
-                // Call save method form PostsService with post
-                PostsService.save(this.post).then((res) => {
-                    // Change editMode value to false
-                    this.editMode = false
-                    if (!this.post._id) {
-                        // if it's new post (when post._id doesn't exist) we affect to post variable response data (post created)
-                        this.post = res.data
-                    }
-                })
-            }
+
+                 // Call save method form PostsService with post
+                 PostsService.save(this.post).then((res) => {
+                     // Change editMode value to false
+                     this.editMode = false
+                     if (!this.post._id) {
+                         // if it's new post (when post._id doesn't exist) we affect to post variable response data (post created)
+                         this.post = res.data
+                     }
+                 })
+             }
 
             // Create undo function.
             // If you want to use in view you can call with $ctrl.undo()

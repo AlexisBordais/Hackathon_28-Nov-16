@@ -19,6 +19,19 @@ module.exports = mongoose.model('Post', new mongoose.Schema({
     title: {
         type: String
     },
+    imageprofil: {
+        type: String,
+        required: true
+    },
+    nomeleve: {
+      type: String
+    },
+    prenomeleve: {
+      type: String
+    },
+    promotion: {
+      type: String
+    },
     content: {
         type: String
     }
