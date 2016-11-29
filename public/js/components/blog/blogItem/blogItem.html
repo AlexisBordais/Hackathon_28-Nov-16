@@ -63,7 +63,7 @@
                                   {{$ctrl.post.lieu}}
                                 </span>
 
-                                <tt>{{$ctrl.post.langage}}</tt>
+
 
 
 
@@ -76,12 +76,50 @@
             <div ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                 {{$ctrl.post.content | limitTo: ($ctrl.editable ? $ctrl.post.content.length : 110)}}
             </div>
-
-
-            <!-- Display textarea for editing post.content only if editable and in edit mode -->
             <textarea class="materialize-textarea" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.content" placeholder="Content"></textarea>
         </div>
         <div class="card-action">
+
+            <div class="row">
+                       <div class="col s3">
+                           <div class="card-content">
+                               <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file2' base-sixty-four-input>
+                               <img class="col s6 m6 l6" ng-if="($ctrl.editable  && !$ctrl.editMode)" ng-src="{{$ctrl.post.imageprofil}}" alt="">
+
+                           </div>
+                       </div>
+
+                       <div class="col s1">
+                           <img src="/static/img/fb-rs.png" alt="" />
+                           <img src="/static/img/lk.png" alt="" />
+                           <img src="/static/img/tw.png" alt="" />
+
+                       </div>
+                       <div class="col s6">
+
+                           <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.nomeleve" placeholder="Nom">
+                           <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                                                           {{$ctrl.post.nomeleve}}
+                           </span>
+                           </br>
+                           <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.prenomeleve" placeholder="Prenom">
+                           <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                                                         {{$ctrl.post.prenomeleve}}
+                         </span>
+                       </br>
+                           <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.promotion" placeholder="Promotion">
+                           <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                                                         {{$ctrl.post.promotion}}
+                         </span>
+
+                       </div>
+                   </div>
+
+
+
+
+            <!-- Display textarea for editing post.content only if editable and in edit mode -->
+
             <!-- Display this link, only if it's not editable, to change state to app.blog.item with the post id -->
             <div class="row">
               <a ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="blue-text text-darken-1 col m5">Read more</a>
