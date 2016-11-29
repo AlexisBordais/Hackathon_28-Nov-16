@@ -1,31 +1,49 @@
 <!-- Display blogItemMenu component (see blogItemMenu.js ) and bind properties with all functions  -->
 <blog-item-menu ng-if="$ctrl.editable" edit-mode="$ctrl.editMode" on-undo="$ctrl.undo()" on-edit="$ctrl.editMode = !$ctrl.editMode" on-delete="$ctrl.delete()" on-save="$ctrl.save()" />
-<div class="col s12 m5">
+
+<div class="col s12 m4">
     <div class="card">
         <!-- In general if it's not editable it's when this component is used in the blogList component -->
+
+
+
         <div class="card-content">
-            <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
-            <img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="">
+
+
+
+             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
+             <img class="col s12 m12" ng-if="(!$ctrl.editable)" ng-src="{{$ctrl.post.image}}" alt=""> <!--petite card-->
+             <img class="col s12 m12 l12" ng-if="($ctrl.editable  && !$ctrl.editMode)" ng-src="{{$ctrl.post.image}}" alt=""><!--grande card-->
+
             <!-- Display post.title if this component is not editable or editable and not in edit mode -->
             <!-- <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.langage" placeholder="langage"> -->
+
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
-                  {{$ctrl.post.langage}}
+              <!-- c'est donc la petite vue -->
+              <h4>{{$ctrl.post.createdAt | date:'dd'}}</h4>
+              <h6>{{$ctrl.post.createdAt | date:'MM'}}</h6>
             </span>
 
-            <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
-                <select class="icons">
-                        <option value="" disabled selected>Choose your best techno</option>
-                        <option data-icon="http://www.alsacreations.com/xmedia/doc/full/php-elephant.png"  value="PHP">PHP</option>
-                        <option data-icon="http://www.alex-arriaga.com/wp-content/uploads/2014/12/javascript-logo.png"  value="JAVASCRIPT">JAVASCRIPT</option>
-                        <option data-icon="https://cms-production-assets.s3-ap-southeast-1.amazonaws.com/1/technology/java-logo.png"  value="JAVA">JAVA</option>
-                        <option data-icon="http://cs.lmu.edu/~ray/images/python-logo.png"  value="PYTHON">PYTHON</option>
-                        <option data-icon="http://static.tiepie.com/gfx/128x/Software/3rdParty/CPlusPlus/CPlusPlusLogo.png"  value="C++">C++</option>
+            <!--  <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
+                <select ng-model="blop">
+                        <option value="PHP">PHP</option>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="PYTHON">PYTHON</option>
+                        <option value="Cpp">C++</option>
                 </select>
             </div>
 
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                  {{$ctrl.post.langage}}
+            </span>-->
+
+            <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.langage" placeholder="Quelle techno ?">
+            <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                                   {{$ctrl.post.langage}}
                                 </span>
+
+
 
             <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.lieu" placeholder="lieu">
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
