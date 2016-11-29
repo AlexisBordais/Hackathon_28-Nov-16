@@ -12,9 +12,9 @@
                   {{$ctrl.post.langage}}
             </span>
 
-
-            <div class="col s12 m6" ng-show="($ctrl.editable && $ctrl.editMode)">
-                <select class="icons">
+            <form>
+            <div class="col s12 m6"  ng-show="($ctrl.editable && $ctrl.editMode)">
+                <select name="pouet" ng-model='$ctrl.post.langage' class="icons">
                         <option value="" disabled selected>Choose your best techno</option>
                         <option data-icon="http://www.alsacreations.com/xmedia/doc/full/php-elephant.png"  value="PHP">PHP</option>
                         <option data-icon="http://www.alex-arriaga.com/wp-content/uploads/2014/12/javascript-logo.png"  value="JAVASCRIPT">JAVASCRIPT</option>
@@ -23,6 +23,7 @@
                         <option data-icon="http://static.tiepie.com/gfx/128x/Software/3rdParty/CPlusPlus/CPlusPlusLogo.png"  value="C++">C++</option>
                 </select>
             </div>
+          </form>
 
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                                   {{$ctrl.post.langage}}
@@ -32,6 +33,8 @@
             <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
                                   {{$ctrl.post.lieu}}
                                 </span>
+
+                                <tt>{{$ctrl.post.langage}}</tt>
 
 
 
