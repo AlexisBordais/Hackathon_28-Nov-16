@@ -2,15 +2,55 @@
   background-color: #d8f78f; }
 
 .card .card-content {
-  padding: 0px;
+  padding: 0;
   border-radius: 0 0 2px 2px; }
 
 .card .card-action {
   text-align: center; }
 
+#ContentGrandCard {
+  margin-left: 5%;
+  margin-right: 5%; }
+
 #titleptitecard {
   font-weight: bold;
   text-align: center; }
+
+#contributeurGrandCard {
+  margin-left: 11.25rem;
+  margin-right: 0.25rem;
+  margin-top: 23px; }
+
+#contributeurGrandCard2 {
+  margin-left: 11.25rem;
+  margin-right: 0.25rem;
+  margin-top: 23px;
+  margin-right: -67px; }
+
+#contributeurtitre {
+  margin: -0.18rem 21px 0.30rem 0; }
+
+#nomeleve {
+  margin-top: 21px; }
+
+#titleBigCard {
+  margin-left: 360px;
+  font-size: -webkit-xxx-large;
+  font-family: sans-serif; }
+
+#photoprofilcontrib {
+  margin-top: 42px; }
+
+#langageGrandCard {
+  margin-left: 12%; }
+
+#lieuGrandCard {
+  margin-left: 12%;
+  font-size: x-large; }
+
+#dateGrandeCard {
+  text-align: right;
+  margin-right: 40px; }
 
 .paracontent {
   margin-right: auto;
@@ -22,6 +62,10 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row; }
+
+#RS {
+  display: flex;
+  flex-direction: column; }
 
 .tata {
   display: flex;
@@ -41,7 +85,8 @@ svg {
   margin: 0 auto;
   width: 350px;
   height: 350px;
-  transform-origin: center; }
+  transform-origin: center;
+  margin-top: -6px; }
 
 [id=svg-fills] path {
   opacity: 0; }

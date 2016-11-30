@@ -1,44 +1,95 @@
 .card {
-  background-color: #d8f78f;
+    background-color: #d8f78f;
 }
 
 .card .card-content {
-    padding: 0px;
+    padding: 0;
     border-radius: 0 0 2px 2px;
 }
-
 // .row {
 //   margin-bottom: 0px;
 // }
 
 .card .card-action {
-  text-align: center;
+    text-align: center;
+}
+
+#ContentGrandCard {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #titleptitecard {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
+}
+
+#contributeurGrandCard {
+  margin-left: 11.25rem;
+margin-right: 0.25rem;
+    margin-top: 23px;
+}
+#contributeurGrandCard2 {
+  margin-left: 11.25rem;
+margin-right: 0.25rem;
+    margin-top: 23px;
+    margin-right: -67px;
+}
+
+#contributeurtitre {
+    margin: -0.18rem 21px 0.30rem 0;
+}
+
+#nomeleve {
+    margin-top: 21px;
+}
+
+#titleBigCard {
+    margin-left: 360px;
+    font-size: -webkit-xxx-large;
+    font-family: sans-serif;
+}
+
+#photoprofilcontrib {
+    margin-top: 42px;
+}
+
+#langageGrandCard {
+    margin-left: 12%;
+}
+
+#lieuGrandCard {
+    margin-left: 12%;
+    font-size: x-large;
+}
+
+#dateGrandeCard {
+    text-align: right;
+    margin-right: 40px;
 }
 
 .paracontent {
-  margin-right: auto;
-  padding-left: 12px;
-  text-align: justify;
-  padding-right: 12px;
+    margin-right: auto;
+    padding-left: 12px;
+    text-align: justify;
+    padding-right: 12px;
 }
 
 .toto {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
-
-.tata {
+#RS {
   display: flex;
   flex-direction: column;
 }
+.tata {
+    display: flex;
+    flex-direction: column;
+}
 
 .buttlink {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }

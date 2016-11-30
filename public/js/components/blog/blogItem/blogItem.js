@@ -49,8 +49,9 @@ Create Angular component blogItem into module app.blog with databinding properti
             // Create save function.
             // If you want to use in view you can call with $ctrl.save()
             this.save = () => {
-                 this.post.image = 'data:image/png;base64,' + this.file.base64;
-                 this.post.imageprofil = 'data:image/png;base64,' + this.file2.base64;
+              this.post.image = 'data:image/png;base64,' + this.file.base64;
+                              this.post.imageprofil = 'data:image/png;base64,' + this.file2.base64;
+                              this.post.imageprofil2 = 'data:image/png;base64,' + this.file3.base64;
 
 
                  // Call save method form PostsService with post

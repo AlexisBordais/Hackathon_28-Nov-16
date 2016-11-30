@@ -1,3 +1,4 @@
+
 /*
 This file define document schema for post
 */
@@ -32,6 +33,21 @@ module.exports = mongoose.model('Post', new mongoose.Schema({
     promotion: {
       type: String
     },
+
+    imageprofil2: {
+        type: String,
+        required: true
+    },
+    nomeleve2: {
+      type: String
+    },
+    prenomeleve2: {
+      type: String
+    },
+    promotion2: {
+      type: String
+    },
+
     content: {
         type: String
     }
