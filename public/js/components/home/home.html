@@ -1,3 +1,12 @@
+<h1 style="color: #6e8b12;margin-bottom: 0px;"><center>WILD ACADEMY</center></h1>
+<p style="margin-top: 0px;margin-bottom: 0px;">
+  <center style="font-weight: 500; font-size: 1.2em;">
+    Bienvenue sur la Wild Academy ! Vous pouvez retrouver tous nos fabuleux projets !
+    Soumettez champs vides ou affinez votre recherche tout vous est permis !
+    Mais surtout recherchez sans chaussures !!
+  </center>
+</p>
+
 <div class="container">
     <svg viewBox="0 0 280.4 280.4">
   <style type="text/css">
@@ -217,7 +226,7 @@
 
 <div class="row">
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" style="background-color: rgb(212, 186, 94);">
             <form>
                 <div class="input-field col s4">
                     <input id="search" type="search" required placeholder="Where ?" ng-model="$ctrl.lieu">
@@ -225,7 +234,7 @@
                     <i class="material-icons">close</i>
                 </div>
 
-                <input type="text" ng-model="$ctrl.post.langage" placeholder="Quelle techno ?">
+                <input type="text" ng-model="$ctrl.langage" placeholder="Quelle techno ?">
 
 
                 <!-- <div class="input-field col s5">
@@ -238,7 +247,7 @@
                     <option value="5">C++</option>
                   </select>
                 </div> -->
-                <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu)" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu,$ctrl.langage)" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>

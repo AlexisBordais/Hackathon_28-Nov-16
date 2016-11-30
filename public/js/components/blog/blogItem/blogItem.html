@@ -1,7 +1,8 @@
 <!-- Display blogItemMenu component (see blogItemMenu.js ) and bind properties with all functions  -->
 <blog-item-menu ng-if="$ctrl.editable" edit-mode="$ctrl.editMode" on-undo="$ctrl.undo()" on-edit="$ctrl.editMode = !$ctrl.editMode" on-delete="$ctrl.delete()" on-save="$ctrl.save()" />
 
-<div class="col s12 m4 ">
+
+<div class="col s12 m3">
     <div class="card">
         <!-- In general if it's not editable it's when this component is used in the blogList component -->
 
@@ -10,12 +11,14 @@
         <div class="card-content">
 
             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
-
-
             <!-- display img in petite card -->
 
-            <img class="col m12" ng-if="(!$ctrl.editable)" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
 
+            <img class="col m12" ng-if="(!$ctrl.editable)" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
+<!--=======
+            <img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
+>>>>>>> 95f179a269a0a1cf2a374fd274c5683ccf8e945d
+-->
             <img class="col m12" ng-if="($ctrl.editable && !$ctrl.editMode)" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 17px;width: 1010px; height: 400px;">
 
 
@@ -110,10 +113,17 @@
 
 
             <div class="row">
+
                 <div class="col s3">
                     <div class="card-content">
                         <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file2' base-sixty-four-input>
                         <img id="photoprofilcontrib" class="col s6 m6 l6" ng-if="($ctrl.editable  && !$ctrl.editMode)" ng-src="{{$ctrl.post.imageprofil}}" alt="">
+<!--======
+                       <div class="col s3">
+                           <div class="card-content">
+                               <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file2' base-sixty-four-input>
+                               <img class="col s6 m6 l6" ng-if="($ctrl.editable  && !$ctrl.editMode)" ng-src="{{$ctrl.post.imageprofil}}" alt="">
+>>>>>>> 95f179a269a0a1cf2a374fd274c5683ccf8e945d-->
 
                     </div>
                 </div>
@@ -126,9 +136,15 @@
                 <!-- style="display: flex;{{!$ctrl.editable || (!$ctrl.editable && !$ctrl.editMode) ? 'flex-direction:row' : 'flex-direction:column'}}" -->
 
 
+
                 <div class="col s6 offset-s1" id="nomeleve">
                     <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.nomeleve" placeholder="Nom">
                     <span class="card-title" ng-if="($ctrl.editable && !$ctrl.editMode)">
+<!--=======
+                       <div class="col s6">
+                           <input type="text" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.nomeleve" placeholder="Nom">
+                           <span class="card-title" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+>>>>>>> 95f179a269a0a1cf2a374fd274c5683ccf8e945d-->
                                                            {{$ctrl.post.nomeleve}}
                            </span>
                     </br>
@@ -187,6 +203,25 @@
                     </div>
                 </div>
 
+<!--=======
+             Display this link, only if it's not editable, to change state to app.blog.item with the post id -->
+          <!--  <div class="row buttlink">
+                <a style="font-weight: bold;border: solid 1px rgba(0,0,0,0.26);" ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="waves-effect waves-light btn text-darken-1 col m6">Read more</a>
+                <a style="font-weight: bold;border: solid 1px rgba(0,0,0,0.26);" ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="waves-effect waves-light btn text-darken-1 col m6">Demo</a>
+            </div>-->
+<!-- <a class="waves-effect waves-light btn">button</a> -->
+            <!-- Display this link, only if it's editable and not in edit mode, to change state to app.blog.list (go back) -->
+      <!--      <a ng-if="$ctrl.editable && !$ctrl.editMode" ui-sref="app.blog.list" class="blue-text text-darken-1">Close</a>-->
+            <!-- Display these links, only if it's in edit mode  -->
+            <!--<a ng-if="$ctrl.editMode" ng-click="$ctrl.undo()" class="waves-effect blue-text text-darken-1"><i class="material-icons">undo</i></a>
+            <a ng-if="$ctrl.editMode" ng-click="$ctrl.save()" class="waves-effect blue-text text-darken-1"><i class="material-icons">done</i></a>-->
+            <!-- On click change value of post.isFav to inverse of this value -->
+            <!-- <a href="" ng-click="$ctrl.post.isFav = !$ctrl.post.isFav">
+                <!-- Change icon from post.isFav value -->
+            <!-- <i class="material-icons pull-right red-text darken-1-text">{{($ctrl.post.isFav ? 'favorite' : 'favorite_border')}}</i>
+            </a> -->
+        </div>
+
 
 
 
@@ -223,8 +258,8 @@
 
                 <!-- Display this link, only if it's not editable, to change state to app.blog.item with the post id -->
                 <div class="row buttlink">
-                    <a ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="blue-text text-darken-1 col m5">Read more</a>
-                    <a ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="blue-text text-darken-1 col m5"> Go Website</a>
+                  <a style="font-weight: bold;border: solid 1px rgba(0,0,0,0.26);" ng-if="!$ctrl.editable" ui-sref="app.blog.item({id: $ctrl.post._id})" class="waves-effect waves-light btn text-darken-1 col m6">Read more</a>
+                  <a style="font-weight: bold;border: solid 1px rgba(0,0,0,0.26);" ng-if="!$ctrl.editable" href="https://www.critikong.com/" class="waves-effect waves-light btn text-darken-1 col m6">Demo</a>
                 </div>
 
                 <!-- Display this link, only if it's editable and not in edit mode, to change state to app.blog.list (go back) -->
