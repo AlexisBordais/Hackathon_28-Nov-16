@@ -228,35 +228,36 @@
     <nav>
         <div class="nav-wrapper" style="background-color: rgb(212, 186, 94);">
             <form>
-                <div class="input-field col s4">
+                <div class="input-field col s5">
                     <input id="search" type="search" required placeholder="Where ?" ng-model="$ctrl.lieu">
                     <label for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
 
-                <input type="text" ng-model="$ctrl.langage" placeholder="Quelle techno ?">
+                <div class="input-field col s5">
+                    <input id="search" type="search" required placeholder="techno ?" ng-model="$ctrl.langage">
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
 
+                <!-- <input type="text" ng-model="$ctrl.langage" placeholder="Quelle techno ?"> -->
 
-                <!-- <div class="input-field col s5">
-                  <select multiple>
-                    <option value="" disabled selected>Choose your techno</option>
-                    <option value="1">PHP</option>
-                    <option value="2">JAVASCRIPT</option>
-                    <option value="3">JAVA</option>
-                    <option value="4">PYTHON</option>
-                    <option value="5">C++</option>
-                  </select>
-                </div> -->
-                <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu,$ctrl.langage)" type="submit" name="action">Submit
+                <!-- <select type="text" class="form-control input-field" name="langage" ng-model="$ctrl.langage">
+                  <option>Javascript</option>
+                  <option>PHP</option>
+                  <option>Ruby</option>
+                  <option name="language" value="JAVA">Java</option>
+                </select> -->
+
+                <button id="btnsubmit"
+                        class="btn waves-effect waves-light col s2 input-field"
+                        ng-click="$ctrl.filter($ctrl.lieu,$ctrl.langage)"
+                        type="submit" name="action">Gogo!
                     <i class="material-icons right">send</i>
                 </button>
             </form>
         </div>
 
     </nav>
-
-
-
-
 
 </div>

@@ -75,6 +75,13 @@
   display: flex;
   justify-content: space-around; }
 
+#btnsubmit {
+  background-color: #9c7d25;
+  line-height: inherit; }
+
+#btnsubmit:hover {
+  background-color: #564207; }
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: white; }
