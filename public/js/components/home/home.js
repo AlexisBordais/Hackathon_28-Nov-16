@@ -5,6 +5,7 @@
         controller: ['PostsService', '$state', function(PostsService, $state) {
             $('select').material_select();
 
+
             this.filter = (lieu, langage) => { //j'essaie de cree ma fonction filtre par lieu'
                 //ou dans la vue avec un a ui-sref="app.blog.list({lieu:$ctrl.lieu})"
                 $state.go('app.blog.list', {
