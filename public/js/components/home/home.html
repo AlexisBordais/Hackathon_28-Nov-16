@@ -225,7 +225,7 @@
                     <i class="material-icons">close</i>
                 </div>
 
-                <input type="text" ng-model="$ctrl.post.langage" placeholder="Quelle techno ?">
+                <input type="text" ng-model="$ctrl.langage" placeholder="Quelle techno ?">
 
 
                 <!-- <div class="input-field col s5">
@@ -238,7 +238,7 @@
                     <option value="5">C++</option>
                   </select>
                 </div> -->
-                <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu)" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light col s3 input-field" ng-click="$ctrl.filter($ctrl.lieu,$ctrl.langage)" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>

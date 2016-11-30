@@ -10,10 +10,7 @@
         <div class="card-content">
 
             <input ng-if="($ctrl.editable && $ctrl.editMode)" type='file' ng-model='$ctrl.file' base-sixty-four-input>
-
-
             <!-- display img in petite card -->
-
             <img class="col m12" ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))" ng-src="{{$ctrl.post.image}}" alt="" style="padding: 0;">
 
 

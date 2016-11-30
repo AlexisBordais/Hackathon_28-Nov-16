@@ -9,13 +9,21 @@ Create Angular service PostsService in app.services module
                 // HTTP Request method GET to our express API
                 return $http.get('/api/posts')
             },
-            filter(lieu){
-              return $http.get('/api/posts' + '?lieu='+ lieu) //je cree mon service filtre qui correpond a ma requette http n'affichant que les users selon leur age
+            filter(filtre) {
+                // Il faut verifier chaque valeur de notre filtre si la valeur est vide ou null supprimer la clé de ce filtre
+                // ex:
+                if (!filtre.langage)
+                    delete filtre.langage
+
+                else if (!filtre.lieu) {
+                  delete filtre.lieu
+                }
+                  
+                return $http.get('/api/posts', {
+                        params: filtre
+                    }) //je cree mon service filtre qui correpond a ma requette http n'affichant que les users selon leur age
             },
 
-            filter(lieu,langage){
-              return $http.get('/api/posts' + '?lieu='+ '?langage')
-            },
 
             // $stateProvider.state('page', {
             //   url: '/page/:x/:y',
