@@ -1,5 +1,5 @@
 .card {
-  background-color: #d8f78f; }
+  background-color: rgba(212, 186, 94, 0.7); }
 
 .card .card-content {
   padding: 0px;
@@ -30,6 +30,22 @@
 .buttlink {
   display: flex;
   justify-content: space-around; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: white; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: white; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white; }
 
 body {
   background-image: url(/static/img/Jungle-Wallpaper-Backgrounds.png);

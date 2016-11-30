@@ -31,7 +31,7 @@ Create Angular component blogList into module app.blog
             // ------
 
             // Define startIndex variable with default value 3
-            this.startIndex = 3
+            this.startIndex = 4
 
             // Call get() method from PostsService.
             // When this request receive response we affect response data to this controller variable posts
